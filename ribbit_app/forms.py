@@ -1,10 +1,10 @@
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-from django.utils import  strip_tags
-from ribbit_app import Ribbit
+from django.utils.html import  strip_tags
+from ribbit_app.models import Ribbit
 
-class UserCreateForm(forms.Form):
+class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True, widget=forms.widgets.TextInput(attrs={'placeholder': 'Email'}))
     first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={'placeholder': 'First Name'}))
     last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={'placeholder': 'Last Name'}))

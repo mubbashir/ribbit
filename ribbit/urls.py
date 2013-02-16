@@ -14,4 +14,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'ribbit_app.views.index'), # root
+    url(r'^login$', 'ribbit_app.views.login_view'), # login
+    url(r'^logout$', 'ribbit_app.views.logout_view'), # logout
+    url(r'^signup$', 'ribbit_app.views.signup'), # signup
 )
