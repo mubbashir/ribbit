@@ -41,3 +41,8 @@ class TestRibbit(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertContains(response, "Test Ribbit #1")
 
+    def test_user_profile(self):
+        self.assertTrue(self.client.login(username="test_user", password='password1'), True)
+        response = self.client.get("/users/test_user/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'user.html')
