@@ -43,5 +43,5 @@ class TestRibbit(TestCase):
 
     def test_user_profile(self):
         self.assertTrue(self.client.login(username="test_user", password='password1'), True)
-        response = self.client.get("/users/testuser")
+        response = self.client.get("/users/tes_tuser")
         self.assertEqual(response.status_code, 200)
